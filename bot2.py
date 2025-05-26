@@ -11,8 +11,8 @@ class VoiceClient(discord.Client):
 import os
 from discord.ext import tasks
 
-TOKEN = os.getenv("DISCORD_TOKEN")
-CHANNEL_ID = int(os.getenv("VOICE_CHANNEL_ID"))
+TOKEN = os.getenv("DISCORD_TOKEN_2")
+CHANNEL_ID = int(os.getenv("VOICE_CHANNEL_ID_2"))
 
 # Set up the required intents
 intents = discord.Intents.default()

@@ -2,8 +2,8 @@ import discord
 import os
 from discord.ext import tasks
 
-TOKEN = os.getenv("DISCORD_TOKEN")
-CHANNEL_ID = int(os.getenv("VOICE_CHANNEL_ID"))
+TOKEN = os.getenv("DISCORD_TOKEN_7")
+CHANNEL_ID = int(os.getenv("VOICE_CHANNEL_ID_7"))
 
 # Set up the required intents
 intents = discord.Intents.default()

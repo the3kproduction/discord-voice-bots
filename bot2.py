@@ -1,13 +1,13 @@
 import discord
 import os
 from discord.ext import tasks
+from keep_alive import keep_alive
 
 TOKEN = os.getenv("DISCORD_TOKEN_2")
 CHANNEL_ID = int(os.getenv("VOICE_CHANNEL_ID_2"))
 
-# Set up the required intents
 intents = discord.Intents.default()
-intents.voice_states = True  # Enable voice state updates (required for joining channels)
+intents.voice_states = True
 
 class VoiceClient(discord.Client):
     async def on_ready(self):
@@ -25,6 +25,8 @@ async def loop(vc):
     if not vc.is_playing():
         vc.play(discord.FFmpegPCMAudio("silent.mp3"))
 
-# Pass the intents when initializing the client
 client = VoiceClient(intents=intents)
-client.run(TOKEN)
+
+if __name__ == "__main__":
+    keep_alive()
+    client.run(TOKEN)

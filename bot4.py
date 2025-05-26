@@ -1,6 +1,7 @@
 import discord
 import os
 from discord.ext import tasks
+from keep_alive import keep_alive
 
 TOKEN = os.getenv("DISCORD_TOKEN_4")
 CHANNEL_ID = int(os.getenv("VOICE_CHANNEL_ID_4"))
@@ -25,4 +26,7 @@ async def loop(vc):
         vc.play(discord.FFmpegPCMAudio("silent.mp3"))
 
 client = VoiceClient(intents=intents)
-client.run(TOKEN)
+
+if __name__ == "__main__":
+    keep_alive()
+    client.run(TOKEN)

@@ -2,8 +2,8 @@ import discord
 import os
 from discord.ext import tasks
 
-TOKEN = os.getenv("DISCORD_TOKEN_5")
-CHANNEL_ID = int(os.getenv("VOICE_CHANNEL_ID_5"))
+TOKEN = os.getenv("DISCORD_TOKEN_6")
+CHANNEL_ID = int(os.getenv("VOICE_CHANNEL_ID_6"))
 
 intents = discord.Intents.default()
 intents.voice_states = True

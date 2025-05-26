@@ -5,6 +5,10 @@ from discord.ext import tasks
 TOKEN = os.getenv("DISCORD_TOKEN")
 CHANNEL_ID = int(os.getenv("VOICE_CHANNEL_ID"))
 
+# Set up the required intents
+intents = discord.Intents.default()
+intents.voice_states = True  # Enable voice state updates (required for joining channels)
+
 class VoiceClient(discord.Client):
     async def on_ready(self):
         print(f'{self.user} has connected')
@@ -21,5 +25,6 @@ async def loop(vc):
     if not vc.is_playing():
         vc.play(discord.FFmpegPCMAudio("silent.mp3"))
 
-client = VoiceClient()
+# Pass the intents when initializing the client
+client = VoiceClient(intents=intents)
 client.run(TOKEN)

@@ -2,12 +2,13 @@ import discord
 import os
 from discord.ext import tasks
 
-TOKEN = os.getenv("DISCORD_TOKEN")
-CHANNEL_ID = int(os.getenv("VOICE_CHANNEL_ID"))
+TOKEN = os.getenv("DISCORD_TOKEN_2")
+CHANNEL_ID = int(os.getenv("VOICE_CHANNEL_ID_2"))
 
 class VoiceClient(discord.Client):
     async def on_ready(self):
-        print(f'{self.user} has connected')import discord
+        print(f'{self.user} has connected')
+        import discord
 import os
 from discord.ext import tasks
 
